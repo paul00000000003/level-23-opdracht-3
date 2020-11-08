@@ -18,6 +18,15 @@ li {
       grid-template-rows: repeat(1, 200px);
 }
 
+#genreMovies {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (170px)[10];
+      grid-template-columns: repeat(10, 170px);
+  -ms-grid-rows: repeat 1, 200px;
+      grid-template-rows: repeat 1, 200px;
+}
+
 #Container {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -26,6 +26,7 @@ let str = "";
 let text = "";
 let genresLijst = document.getElementById("genres");
 let topRatedMovies = document.getElementById("top_rated_movies");
+let genreMovies = document.getElementById("genreMovies");
 let movies1975 = document.getElementById("movies1975");
 let regel = "";
 let arr3 = [];
@@ -61,7 +62,7 @@ fetchFavouriteMovie().then((result) => {
 namen = [];
 let popularities = [];
 let posters = [];
-let releasdates = [];
+let releasedates = [];
 genres = [];
 let teller = 0;
 let keuze = 37;
@@ -93,7 +94,6 @@ getMovies1975().then(() => {
         if (teller < 10) {
             plaatje = document.createElement("img");
             plaatje.setAttribute("src", posters[index]);
-            console.log("poster : " + posters[index]);
             plaatje.setAttribute("width", "60px");
             plaatje.setAttribute("alt", "filmposter");
             figuur = document.createElement("figure");
@@ -102,6 +102,27 @@ getMovies1975().then(() => {
             figuur.appendChild(plaatje);
             figuur.appendChild(figcaption);
             movies1975.appendChild(figuur);
+            teller += 1;
+        }
+    })
+})
+
+getGenreMovies(37).then(() => {
+    teller = 0;
+    teller = 0;
+    releasedates.forEach((item, index) => {
+        if (teller < 10) {
+            plaatje = document.createElement("img");
+            plaatje.setAttribute("src", posters[index]);
+            console.log("poster : " + posters[index]);
+            plaatje.setAttribute("width", "60px");
+            plaatje.setAttribute("alt", "filmposter");
+            figuur = document.createElement("figure");
+            figcaption = document.createElement("figcaption");
+            figcaption.innerHTML = namen[index] + " " + item;
+            figuur.appendChild(plaatje);
+            figuur.appendChild(figcaption);
+            genreMovies.appendChild(figuur);
             teller += 1;
         }
     })

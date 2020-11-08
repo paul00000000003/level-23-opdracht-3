@@ -43,6 +43,7 @@ async function getTopRatedMovies() {
         popularities = [];
         posters = [];
         genres = [];
+        console.log(arr2);
         arr2.forEach(element => {
             namen.push(element.name);
             popularities.push(element.popularity);
@@ -63,13 +64,35 @@ async function getMovies1975() {
         str += "&include_adult=false";
         str += "&include_video=false";
         str += "&primary_release_year=1975";
-        //https://api.themoviedb.org/3/discover/movie?
-        //api_key=602151ee0515babb6cbb286da27be73b&language=en-US&
-        //sort_by=popularity.desc&
-        //include_adult=false&
-        //include_video=false&
-        //page=1&
-        //primary_release_year=1975
+        text = await fetch(str)
+        result = await text.json();
+        arr2 = result["results"];
+        namen = [];
+        popularities = [];
+        posters = [];
+        genres = [];
+        releasedates = [];
+        arr2.forEach(element => {
+            namen.push(element.title);
+            popularities.push(element.popularity);
+            posters.push(posterbasis + element.poster_path);
+            genres.push(element.genre_ids);
+            releasedates.push(element.release_date);
+        })
+    } catch (err) { console.log(err) }
+}
+
+async function getGenreMovies(soortGenre) {
+    try {
+        let i = 1;
+        str = "https://api.themoviedb.org/3/discover/movie?";
+        str += "api_key=" + API_KEY;
+        str += "&language=en-US";
+        str += "&sort_by=popularity.desc";
+        str += "&page=" + i.toString();
+        str += "&include_adult=false";
+        str += "&include_video=false";
+        str += "&with_genres=" + soortGenre;
         text = await fetch(str)
         result = await text.json();
         arr2 = result["results"];

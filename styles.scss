@@ -15,6 +15,12 @@ li {
     grid-template-rows: repeat(1, 200px);
 }
 
+#genreMovies {
+    display: grid;
+    grid-template-columns: repeat(10, 170px);
+    grid-template-rows: repeat (1, 200px);
+}
+
 #Container {
     display: flex;
     height: 500px;

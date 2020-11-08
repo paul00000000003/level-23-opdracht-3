@@ -1,0 +1,42 @@
+#genres {
+    font-size: 40px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+li {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#top_rated_movies {
+    display: grid;
+    grid-template-columns: repeat(10, 170px);
+    grid-template-rows: repeat(1, 200px);
+}
+
+#Container {
+    display: flex;
+    height: 500px;
+}
+
+#topmovie {
+    width: 300px;
+}
+
+#movies1975 {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 200px);
+}
+
+ul {
+    width: 300px;
+}
+
+figure {
+    width: 100px;
+    height: 150px;
+    margin: 20px;
+}

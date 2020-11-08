@@ -1,0 +1,51 @@
+#genres {
+  font-size: 40px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+li {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+#top_rated_movies {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (170px)[10];
+      grid-template-columns: repeat(10, 170px);
+  -ms-grid-rows: (200px)[1];
+      grid-template-rows: repeat(1, 200px);
+}
+
+#Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 500px;
+}
+
+#topmovie {
+  width: 300px;
+}
+
+#movies1975 {
+  width: 800px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (200px)[4];
+      grid-template-rows: repeat(4, 200px);
+}
+
+ul {
+  width: 300px;
+}
+
+figure {
+  width: 100px;
+  height: 150px;
+  margin: 20px;
+}
+/*# sourceMappingURL=styles.css.map */
